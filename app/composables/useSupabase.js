@@ -1,8 +1,25 @@
-export const useSupabase = () => {
-    const { $supabase } = useNuxtApp();
-    if (!$supabase) {
-        console.error("Supabase client is niet beschikbaar. Controleer je configuratie.");
-        return null;
+import { createClient } from '@supabase/supabase-js'
+
+export default defineNuxtPlugin(() => {
+  const config = useRuntimeConfig()
+
+  const supabaseUrl = config.public.supabaseUrl
+  const supabaseAnonKey = config.public.supabaseAnonKey
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error('Supabase configuratie ontbreekt in runtimeConfig')
+    return {
+      provide: {
+        supabase: null
+      }
     }
-    return $supabase;
-};
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
+  return {
+    provide: {
+      supabase
+    }
+  }
+})
