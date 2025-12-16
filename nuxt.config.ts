@@ -3,6 +3,9 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         '@nuxtjs/tailwindcss'
     ],
+    build: {
+        transpile: ['@supabase/supabase-js']
+    },
     runtimeConfig: {
         public: {
             supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
