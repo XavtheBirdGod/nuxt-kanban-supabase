@@ -52,7 +52,8 @@ border-slate-800 shadow-lg">
               v-model="newTaskTitle"
               type="text"
               placeholder="Nieuwe taaknaam"
-              class="mt-1 w-full rounded-md border border-slate-700 bg-slate900 px-2 py-1 text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              class="mt-1 w-full rounded-md border border-slate-700 bg-slate-900 px-2 py-1
+              text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
           />
         </label>
         <label class="block text-[11px] font-medium text-slate-300">
@@ -61,12 +62,13 @@ border-slate-800 shadow-lg">
               v-model="newTaskDescription"
               rows="2"
               placeholder="Optioneel"
-              class="mt-1 w-full rounded-md border border-slate-700 bg-slate900 px-2 py-1 text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              class="mt-1 w-full rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs
+              text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
           />
         </label>
         <button
             type="submit"
-            class="w-full rounded-md bg-indigo-600 py-1.5 text-xs fontsemibold text-white hover:bg-indigo-500 disabled:opacity-40"
+            class="w-full rounded-md bg-indigo-600 py-1.5 text-xs font-semibold text-white hover:bg-indigo-500 disabled:opacity-40"
             :disabled="!newTaskTitle.trim()"
         >
           Taak toevoegen
